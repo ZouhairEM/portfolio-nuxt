@@ -1,33 +1,53 @@
 <template>
-  <main class="container mx-auto">
-    <section class="flex flex-row justify-center items-center h-screen">
+  <main class="">
+    <section class="flex flex-row justify-around items-center h-screen">
       <BioBlock :currentYear="currentYear" />
       <Illustration class="max-w-md" />
     </section>
 
-    <section class="my-7 p-7">
-    <h4 class="font-bold text-lg text-white text-center">
-      What Skills I Have
-    </h4>
-    <h1 class="font-bold text-5xl text-tertiary-300 text-center">
-      My experience
-    </h1>
+    <section class="mt-3 p-6">
+      <div class="flex justify-center mb-16">
+        <h1 class="font-bold text-4xl text-white text-center">
+          Zouhair
+        </h1>
+        <span class="text-orange font-bold text-4xl mx-5">|</span>
+        <h4 class="font-bold text-4xl text-orange text-center">
+          Who I am
+        </h4>
+      </div>
+      <AboutMe :about-me="aboutMe" />
+    </section>
+    <section class="mt-32 mb-16 p-6">
+      <div class="flex justify-center">
+        <h1 class="font-bold text-4xl text-white text-center">
+          Experience
+        </h1>
+        <span class="text-orange font-bold text-4xl mx-5">|</span>
+        <h4 class="font-bold text-4xl text-orange text-center">
+          What I know
+        </h4>
+      </div>
     </section>
     <section>
-      <ul class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 mx-auto sm:mx-0 gap-10 bg-primary-200 p-7">
-        <SkillSet v-for="skill in skillSet" :key="skill.skill" :skill="skill" />
+      <Shape style="z-index: -1;" />
+      <ul class="grid grid-cols-4 gap-10 bg-primary-200 p-12 shadow-2xl">
+        <SkillSet v-for="skill in skillSet" :key="skill.skill" :skill="skill" class="flex gap-4" />
       </ul>
     </section>
 
-    <h1 class="font-bold text-5xl text-tertiary-300 p-7 my-20 text-center">
-      My recent work
-    </h1>
-    <section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mx-auto sm:mx-0 gap-4">
-      <ProjectBio v-for="project in projectBios" :key="project.title" :data="project" />
+    <section class="mt-32 mb-16 p-6">
+      <div class="flex justify-center">
+        <h1 class="font-bold text-4xl text-white text-center">
+          Projects
+        </h1>
+        <span class="text-orange font-bold text-4xl mx-5">|</span>
+        <h4 class="font-bold text-4xl text-orange text-center">
+          What I made
+        </h4>
+      </div>
     </section>
-
-    <section class="mt-10">
-      <FooterComponent :footerData="footerData" :currentYear="currentYear" />
+    <section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mx-auto sm:mx-0 gap-6 gap-y-10">
+      <ProjectBio v-for="project in projectBios" :key="project.title" :data="project" />
     </section>
   </main>
 </template>
@@ -35,115 +55,113 @@
 <script lang="ts">
 import Vue from 'vue'
 import BioBlock from '~/components/BioBlock.vue'
+import AboutMe from '~/components/AboutMe.vue'
 import ProjectBio from '~/components/ProjectBio.vue'
 import Illustration from '~/components/Illustration.vue'
+import Shape from '~/components/Shape.vue'
 import SkillSet from '~/components/SkillSet.vue'
-import FooterComponent from '~/components/FooterComponent.vue'
 
 export default Vue.extend({
   name: 'IndexPage',
   components: {
     BioBlock,
+    AboutMe,
     ProjectBio,
     Illustration,
-    SkillSet,
-    FooterComponent
+    Shape,
+    SkillSet
   },
   data () {
     return {
+      aboutMe: 'A Dutch frontend developer working as an Associate Consultant for Capgemini Group. Before that I studied web development and got a Bachelor of Engineering degree in ICT & Media Design.',
       projectBios: [
         {
-          title: 'Portfolio website',
+          title: 'Portfolio',
           img: 'placeholder.png',
           technologies: ['Nuxt.JS', 'CMS', 'Tailwind'],
           repo: 'https://github.com/ZouhairEM/pokemon/',
           live: 'https://zouhairem.github.io/pokemon/'
         },
         {
-          title: 'Pokemon App',
+          title: 'Pokémon App',
           img: 'pokemon_project.png',
           technologies: ['React.JS', 'Bootstrap'],
           repo: 'https://github.com/ZouhairEM/pokemon/',
           live: 'https://zouhairem.github.io/pokemon/'
         },
         {
-          title: 'TV App',
+          title: 'TV Shows App',
           img: 'tvapp.png',
-          technologies: ['Vue.JS', 'Tailwind', 'Unit Test'],
+          technologies: ['Vue.JS', 'Bootstrap', 'Unit Test'],
           repo: 'https://github.com/ZouhairEM/pokemon/',
           live: 'https://zouhairem.github.io/pokemon/'
         },
         {
-          title: 'Project: Exoplanet',
+          title: 'Project: Exoplanet 3D',
           img: 'placeholder.png',
-          technologies: ['Three.JS', 'JSON'],
+          technologies: ['Javascript, Three.JS', 'JSON'],
           repo: 'https://github.com/ZouhairEM/pokemon/',
           live: 'https://zouhairem.github.io/pokemon/'
+        },
+        {
+          title: 'Patient Dossier GUI',
+          img: 'placeholder.png',
+          technologies: ['jQuery'],
+          repo: 'https://github.com/ZouhairEM/pokemon/',
+          live: 'https://zouhairem.github.io/pokemon/'
+        },
+        {
+          title: 'Working title',
+          img: 'placeholder.png',
+          inProgress: true,
+          repo: 'https://github.com/ZouhairEM/pokemon/'
         }
       ],
       skillSet: [
         {
           skill: 'HTML',
-          icon: 'linkedin.svg'
+          icon: 'html.svg'
         },
         {
           skill: 'CSS',
-          icon: 'linkedin.svg'
+          icon: 'css.svg'
         },
         {
           skill: 'Javascript',
-          icon: 'linkedin.svg'
+          icon: 'js.svg'
         },
         {
           skill: 'UI/UX Design',
-          icon: 'linkedin.svg'
+          icon: 'ux.svg'
         },
         {
           skill: 'Vue.JS',
-          icon: 'linkedin.svg'
+          icon: 'vue.svg'
         },
         {
           skill: 'React.JS',
-          icon: 'linkedin.svg'
+          icon: 'react.svg'
         },
         {
           skill: 'Azure DevOps',
-          icon: 'linkedin.svg'
+          icon: 'azure.svg'
         },
         {
-          skill: 'Git',
-          icon: 'linkedin.svg'
-        },
-        {
-          skill: 'Tailwind',
-          icon: 'linkedin.svg'
+          skill: 'Bootstrap',
+          icon: 'bootstrap.svg'
         },
         {
           skill: 'Tailwind',
-          icon: 'linkedin.svg'
+          icon: 'tailwind.svg'
         },
         {
           skill: 'Unit Testing',
-          icon: 'linkedin.svg'
+          icon: 'jest.svg'
         },
         {
           skill: 'E2E Testing',
-          icon: 'linkedin.svg'
-        }],
-      footerData: [
-        {
-          link: 'https://github.com/ZouhairEM',
-          icon: 'github.svg'
-        },
-        {
-          link: 'https://www.linkedin.com/in/zouhairelmariami/',
-          icon: 'linkedin.svg'
-        },
-        {
-          link: 'mailto:zouhairelmariami@gmail.com',
-          icon: 'email.svg'
-        }
-      ]
+          icon: 'testcafe.svg'
+        }]
     }
   },
   computed: {

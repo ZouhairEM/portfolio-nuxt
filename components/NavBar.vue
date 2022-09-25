@@ -1,17 +1,17 @@
 <template>
-    <nav class="mx-auto container">
-        <ul class="flex">
-            <li class="cursor-pointer border-b-2 border-tertiary-100 mr-10 p-2 text-white hover:bg-tertiary-300">
-                _ZouhairEM
+    <nav class="text-grey pb-2 text-grey border-t border-lines border-orange">
+        <ul class="flex container">
+            <li class="cursor-pointer border-b-2 border-grey mr-10 p-2 text-white hover:text-white hover:border-b-2 :hover:border-orange">
+                About Me
             </li>
-            <li class="cursor-pointer border-b-2 border-tertiary-300 mr-10 p-2 text-white hover:bg-tertiary-300">
-                _index
+            <li class="cursor-pointer mr-10 p-2 text-grey hover:text-white hover:text-white">
+                Experience
             </li>
-            <li class="cursor-pointer border-b-2 border-tertiary-300 mr-auto p-2 text-white hover:bg-tertiary-300">
-                _projects
+            <li class="cursor-pointer mr-auto p-2 text-grey hover:text-white">
+                Projects
             </li>
-            <li class="cursor-pointer border-b-2 border-tertiary-300 p-2 text-white hover:bg-tertiary-300">
-                _contact-me
+            <li class="cursor-pointer p-2 text-grey hover:text-white">
+                Contact Me
             </li>
         </ul>
     </nav>

@@ -1,6 +1,7 @@
 <template>
-  <div class="mx-auto container text-grey border-t border-lines flex items-center text-sm">
-    <ul class="flex items-center mr-auto">
+  <div class="text-grey border-t border-lines text-sm">
+    <div class="container flex items-center">
+      <ul class="flex items-center mr-auto">
       <li class="mr-5 p-2 opacity-50">
         Find me at:
       </li>
@@ -12,6 +13,7 @@
     </ul>
     <div class="text-grey">
       Zouhair El-Mariami {{ currentYear }} ©
+    </div>
     </div>
   </div>
 </template>

@@ -1,5 +1,14 @@
 module.exports = {
   theme: {
+    container: {
+      center: true,
+      screens: {
+        sm: '600px',
+        md: '728px',
+        lg: '984px',
+        xl: '1340px'
+      }
+    },
     colors: {
       primary: {
         100: '#625be4',
@@ -16,8 +25,9 @@ module.exports = {
         200: '#55bcf2',
         300: '#4196c2'
       },
-      white: '#d5c8c8',
-      grey: 'rgb(209, 213, 219)'
+      orange: '#4f4abc',
+      white: '#f3e4e4',
+      grey: 'rgba(65, 150, 194, 0.7)'
     }
   }
 }

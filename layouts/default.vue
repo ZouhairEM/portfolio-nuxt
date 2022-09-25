@@ -1,26 +1,54 @@
 <template>
-    <div id="app" class="relative screen h-screen">
-        <NavBar />
-        <div class="container mx-auto">
-            <Nuxt />
-        </div>
+  <div id="app" class="relative screen h-screen">
+    <NavBar />
+    <div class="container mx-auto">
+      <Nuxt />
     </div>
+    <FooterComponent class="mt-40" :footerData="footerData" :currentYear="currentYear" />
+  </div>
 </template>
 
 <script>
+import FooterComponent from '@/components/FooterComponent.vue'
+
 export default {
-  name: 'Default'
+  name: 'Default',
+  components: {
+    FooterComponent
+  },
+  data () {
+    return {
+      footerData: [
+        {
+          link: 'mailto:zouhairelmariami@gmail.com',
+          icon: 'mail.svg'
+        },
+        {
+          link: 'https://github.com/ZouhairEM',
+          icon: 'github.svg'
+        },
+        {
+          link: 'https://www.linkedin.com/in/zouhairelmariami/',
+          icon: 'linkedin.svg'
+        }
+      ]
+    }
+  },
+  computed: {
+    currentYear () {
+      return new Date().getFullYear()
+    }
+  }
 }
 </script>
 
 <style>
 body {
-    margin: 0;
-    padding: 0;
-    background: #011627;
+  background: #011627;
 }
 
 #app {
-    min-width: 320px;
+  font-family: 'Poppins', sans-serif;
+  min-width: 320px;
 }
 </style>

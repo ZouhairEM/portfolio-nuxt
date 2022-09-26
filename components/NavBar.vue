@@ -1,17 +1,17 @@
 <template>
-    <nav class="text-grey pb-2 text-grey border-t border-lines border-orange">
+    <nav class="text-lightBlue pb-2 text-lightBlue border-t border-lines border-lightBlue">
         <ul class="flex container">
-            <li class="cursor-pointer border-b-2 border-grey mr-10 p-2 text-white hover:text-white hover:border-b-2 :hover:border-orange">
-                About Me
+            <li class="cursor-pointer mr-10 p-2 text-lightBlue hover:text-white hover:border-b-2">
+                About
             </li>
-            <li class="cursor-pointer mr-10 p-2 text-grey hover:text-white hover:text-white">
-                Experience
+            <li class="cursor-pointer mr-10 p-2 text-lightBlue hover:text-white">
+                Skills
             </li>
-            <li class="cursor-pointer mr-auto p-2 text-grey hover:text-white">
-                Projects
+            <li class="cursor-pointer mr-auto p-2 text-lightBlue hover:text-white">
+                Work
             </li>
-            <li class="cursor-pointer p-2 text-grey hover:text-white">
-                Contact Me
+            <li class="cursor-pointer p-2 text-lightBlue hover:text-white">
+                Contact
             </li>
         </ul>
     </nav>

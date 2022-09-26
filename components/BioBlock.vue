@@ -1,13 +1,20 @@
 <template>
     <div>
+        <h5 class="text-sm text-lightBlue">Hi, my name is</h5>
         <h1 class="font-bold text-8xl text-white">
-            Zouhair <br />
+            Zouhair
         </h1>
-        <h2 class="font-bold text-7xl my-5 text-white">
-            El-Mariami
+        <h2 class="font-bold text-7xl text-white">
+          El-Mariami
         </h2>
         <h3 class="font-medium text-2xl text-white my-5">
-            A <span class="text-grey">frontend developer</span> with {{ currentYear - 2017 }} years of experience. <br />
+            <span class="opacity-80">
+              A
+            </span>
+            <span class="text-lightBlue">frontend developer</span>
+            <span class="opacity-80">
+              with {{ currentYear - 2017 }} years of experience.
+            </span>
         </h3>
     </div>
 </template>

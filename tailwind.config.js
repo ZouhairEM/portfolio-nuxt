@@ -1,4 +1,5 @@
 module.exports = {
+  darkMode: 'media',
   theme: {
     container: {
       center: true,
@@ -27,7 +28,7 @@ module.exports = {
       },
       orange: '#4f4abc',
       white: '#f3e4e4',
-      grey: 'rgba(65, 150, 194, 0.7)'
+      lightBlue: 'rgba(65, 150, 194, 0.9)'
     }
   }
 }

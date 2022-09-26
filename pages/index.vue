@@ -1,53 +1,51 @@
 <template>
-  <main class="">
-    <section class="flex flex-row justify-around items-center h-screen">
+  <main>
+    <section class="flex flex-row justify-center items-center h-screen">
       <BioBlock :currentYear="currentYear" />
-      <Illustration class="max-w-md" />
+      <img src="@/assets/img/me.jpeg" class="w-40 rounded-full shadow-inner opacity-80 ml-20"
+      alt="Zouhair El-Mariami">
     </section>
 
-    <section class="mt-3 p-6">
-      <div class="flex justify-center mb-16">
-        <h1 class="font-bold text-4xl text-white text-center">
-          Zouhair
+    <section class="mt-0 p-7">
+      <div class="flex justify-center mb-5">
+        <h1 class="font-bold text-4xl text-white text-center border-b-4 border-lightBlue">
+          About
         </h1>
-        <span class="text-orange font-bold text-4xl mx-5">|</span>
-        <h4 class="font-bold text-4xl text-orange text-center">
-          Who I am
-        </h4>
       </div>
       <AboutMe :about-me="aboutMe" />
     </section>
     <section class="mt-32 mb-16 p-6">
       <div class="flex justify-center">
-        <h1 class="font-bold text-4xl text-white text-center">
-          Experience
+        <h1 class="font-bold text-4xl text-white text-center border-b-4 border-lightBlue">
+         Skills
         </h1>
-        <span class="text-orange font-bold text-4xl mx-5">|</span>
-        <h4 class="font-bold text-4xl text-orange text-center">
-          What I know
-        </h4>
       </div>
     </section>
     <section>
-      <Shape style="z-index: -1;" />
-      <ul class="grid grid-cols-4 gap-10 bg-primary-200 p-12 shadow-2xl">
+      <Shape class="shadow-2xl" style="z-index: -1;" />
+      <ul class="grid grid-cols-4 gap-10 bg-primary-200 p-12 shadow-2xl rounded-2xl">
         <SkillSet v-for="skill in skillSet" :key="skill.skill" :skill="skill" class="flex gap-4" />
       </ul>
     </section>
 
     <section class="mt-32 mb-16 p-6">
       <div class="flex justify-center">
-        <h1 class="font-bold text-4xl text-white text-center">
-          Projects
+        <h1 class="font-bold text-4xl text-white text-center border-b-4 border-lightBlue">
+          Work
         </h1>
-        <span class="text-orange font-bold text-4xl mx-5">|</span>
-        <h4 class="font-bold text-4xl text-orange text-center">
-          What I made
-        </h4>
       </div>
     </section>
     <section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mx-auto sm:mx-0 gap-6 gap-y-10">
       <ProjectBio v-for="project in projectBios" :key="project.title" :data="project" />
+    </section>
+    <section class="mt-32 mb-16 p-6 flex flex-col justify-center items-center">
+      <div class="flex justify-center mb-32">
+        <h1 class="font-bold text-4xl text-white text-center border-b-4 border-lightBlue">
+          Contact
+        </h1>
+      </div>
+      <h2 class="font-medium text-lg text-white my-5">Submit the form below or send an email to <span class="text-lightBlue">zouhairelmariami@gmail.com </span> </h2>
+      <ContactForm class="grid grid-cols-1 gap-4" />
     </section>
   </main>
 </template>
@@ -57,9 +55,9 @@ import Vue from 'vue'
 import BioBlock from '~/components/BioBlock.vue'
 import AboutMe from '~/components/AboutMe.vue'
 import ProjectBio from '~/components/ProjectBio.vue'
-import Illustration from '~/components/Illustration.vue'
 import Shape from '~/components/Shape.vue'
 import SkillSet from '~/components/SkillSet.vue'
+import ContactForm from '~/components/ContactForm.vue'
 
 export default Vue.extend({
   name: 'IndexPage',
@@ -67,9 +65,9 @@ export default Vue.extend({
     BioBlock,
     AboutMe,
     ProjectBio,
-    Illustration,
     Shape,
-    SkillSet
+    SkillSet,
+    ContactForm
   },
   data () {
     return {
@@ -131,10 +129,6 @@ export default Vue.extend({
           icon: 'js.svg'
         },
         {
-          skill: 'UI/UX Design',
-          icon: 'ux.svg'
-        },
-        {
           skill: 'Vue.JS',
           icon: 'vue.svg'
         },
@@ -161,7 +155,13 @@ export default Vue.extend({
         {
           skill: 'E2E Testing',
           icon: 'testcafe.svg'
-        }]
+        },
+        {
+          skill: 'UI/UX Design',
+          icon: 'ux.svg'
+        }],
+      restaurants: [],
+      error: null
     }
   },
   computed: {

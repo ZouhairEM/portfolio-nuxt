@@ -4,17 +4,17 @@
     <div class="container mx-auto">
       <Nuxt />
     </div>
-    <FooterComponent class="mt-40" :footerData="footerData" :currentYear="currentYear" />
+    <FooterNav class="mt-40" :footerData="footerData" :currentYear="currentYear" />
   </div>
 </template>
 
 <script>
-import FooterComponent from '@/components/FooterComponent.vue'
+import FooterNav from '~/components/FooterNav.vue'
 
 export default {
   name: 'Default',
   components: {
-    FooterComponent
+    FooterNav
   },
   data () {
     return {

@@ -49,7 +49,6 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: ['@nuxtjs/strapi'],
   strapi: {
-    entities: ['restaurants', 'categories'],
     url: 'http://localhost:1337'
   },
 

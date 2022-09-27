@@ -5,9 +5,9 @@
       <li class="mr-5 p-2 opacity-50">
         Reach me at:
       </li>
-      <li v-for="item in footerData" :key="item.link" class="mr-2">
-        <a :href="item.link" target="_blank">
-          <img :src="require(`@/assets/img/icons/${item.icon}`)" width="25" class="opacity-80 hover:opacity-100" :alt="item.icon">
+      <li v-for="item in footerData.data" :key="item.id" class="mr-2">
+        <a :href="item.attributes.link" target="_blank">
+          <img :src="'http://localhost:1337' + item.attributes.icon.data.attributes.url" width="25" class="opacity-80 hover:opacity-100" :alt="item.icon">
         </a>
       </li>
     </ul>
@@ -19,21 +19,23 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   name: 'FooterNav',
-  props: {
-    footerData: {
-      type: Array,
-      default: () => {
-        return Array
-      }
-    },
-    currentYear: {
-      type: Number,
-      default: () => {
-        return Object
-      }
+  data () {
+    return {
+      footerData: []
     }
+  },
+  computed: {
+    currentYear () {
+      return new Date().getFullYear()
+    }
+  },
+  async mounted () {
+    const footerRes = await axios.get('http://localhost:1337/api/footers?populate=*')
+    this.footerData = footerRes.data
   }
 }
 </script>

@@ -4,7 +4,7 @@
     <div class="container mx-auto">
       <Nuxt />
     </div>
-    <FooterNav class="mt-40" :footerData="footerData" :currentYear="currentYear" />
+    <FooterNav class="mt-40" />
   </div>
 </template>
 
@@ -15,29 +15,6 @@ export default {
   name: 'Default',
   components: {
     FooterNav
-  },
-  data () {
-    return {
-      footerData: [
-        {
-          link: 'mailto:zouhairelmariami@gmail.com',
-          icon: 'mail.svg'
-        },
-        {
-          link: 'https://github.com/ZouhairEM',
-          icon: 'github.svg'
-        },
-        {
-          link: 'https://www.linkedin.com/in/zouhairelmariami/',
-          icon: 'linkedin.svg'
-        }
-      ]
-    }
-  },
-  computed: {
-    currentYear () {
-      return new Date().getFullYear()
-    }
   }
 }
 </script>

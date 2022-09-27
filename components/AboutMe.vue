@@ -1,7 +1,7 @@
 <template>
   <div class="flex justify-between p-6">
-    <h3 class="font-medium text-lg text-white my-5">
-      {{ aboutMe }}
+    <h3 v-for="item in aboutMe.data" :key="item.id" class="font-medium text-lg text-white my-5">
+      {{ item.attributes.description }}
     </h3>
   </div>
 </template>
@@ -19,7 +19,3 @@ export default {
   }
 }
 </script>
-
-<style>
-
-</style>

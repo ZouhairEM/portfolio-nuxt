@@ -18,14 +18,3 @@ export default {
   }
 }
 </script>
-
-<style>
-body {
-  background: #011627;
-}
-
-#app {
-  font-family: 'Poppins', sans-serif;
-  min-width: 320px;
-}
-</style>

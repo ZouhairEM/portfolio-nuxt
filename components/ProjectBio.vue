@@ -1,5 +1,5 @@
 <template>
-  <div class="flex max-w-sm flex-col justify-between rounded-2xl bg-primary-200 p-6 text-white text-sm shadow-xl">
+  <div class="flex flex-col justify-center items-center rounded-2xl bg-primary-200 p-6 text-white text-sm shadow-xl">
     <p class="text-white">{{ project.attributes.project_title }}</p>
     <img :src="'http://localhost:1337' + project.attributes.project_thumbnail.data.attributes.url" alt="Pokemon project"
       class="h-60 rounded-2xl shadow-inner my-3 opacity-80" />

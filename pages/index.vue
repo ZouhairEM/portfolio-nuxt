@@ -53,6 +53,13 @@ export default Vue.extend({
     ProjectBio,
     LearnedSkill
   },
+  async asyncData ({ $content }) {
+    const posts = await $content('blog').fetch()
+
+    return {
+      posts
+    }
+  },
   data () {
     return {
       aboutMe: '',

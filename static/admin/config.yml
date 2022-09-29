@@ -36,9 +36,9 @@ collections:
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Featured Image", name: "thumbnail", widget: "image"}
       - {label: "Body", name: "body", widget: "markdown"}
-  - name: 'topic'
-    label: 'Topic component'
-    folder: 'content/topic'
+  - name: 'skills'
+    label: 'Skills'
+    folder: 'content/skill'
     format: 'frontmatter'
     create: true
     slug: '{{slug}}'
@@ -46,8 +46,7 @@ collections:
       preview: false
     widget: "select"      
     fields:
-      - {label: "Layout", name: "layout", widget: "hidden", default: "topic"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Layout", name: "layout", widget: "hidden", default: "skill"}
+      - {label: "Skill", name: "Skill", widget: "string"}
       - {label: "Featured Image", name: "thumbnail", widget: "image"}
       - {label: "Body", name: "body", widget: "markdown"}

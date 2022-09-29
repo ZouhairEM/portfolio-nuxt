@@ -13,8 +13,6 @@
       <!-- <AboutMe :about-me="aboutMe" class="px-6" /> -->
     </section>
     <pre class="text-white">
-        {{ header }}
-        {{ topics }}
         {{ blogs }}
       </pre>
     <section id="skills" class="mt-16 sm:mt-32 mb-16 p-6">
@@ -58,13 +56,9 @@ export default {
     // LearnedSkill
   },
   async asyncData ({ $content }) {
-    const header = await $content('header').fetch()
     const blogs = await $content('blog').fetch()
-    const topics = await $content('topic').fetch()
     return {
-      header,
-      blogs,
-      topics
+      blogs
     }
   },
   data () {

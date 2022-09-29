@@ -6,21 +6,6 @@ media_folder: static/images
 public_folder: /images
 
 collections:
-  - name: 'header'
-    label: 'Header component'
-    folder: 'content/header'
-    format: 'frontmatter'
-    create: true
-    slug: '{{slug}}'
-    editor:
-      preview: false
-    widget: "select"      
-    fields:
-      - {label: "Layout", name: "layout", widget: "hidden", default: "header"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Featured Image", name: "thumbnail", widget: "image"}
-      - {label: "Body", name: "body", widget: "markdown"}
   - name: 'blog'
     label: 'Blog'
     folder: 'content/blog'
@@ -41,7 +26,6 @@ collections:
     folder: 'content/skill'
     format: 'frontmatter'
     create: true
-    slug: '{{slug}}'
     editor:
       preview: false
     widget: "select"      
@@ -49,4 +33,30 @@ collections:
       - {label: "Layout", name: "layout", widget: "hidden", default: "skill"}
       - {label: "Skill", name: "Skill", widget: "string"}
       - {label: "Featured Image", name: "thumbnail", widget: "image"}
-      - {label: "Body", name: "body", widget: "markdown"}
+  - name: 'projects'
+    label: 'Projects'
+    folder: 'content/projects'
+    format: 'frontmatter'
+    create: true
+    editor:
+      preview: false
+    widget: "select"      
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "project"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Featured Image", name: "thumbnail", widget: "image"}
+      - {label: "Tech stack", name: "tech", widget: "string"}
+      - {label: "Repo", name: "repo", widget: "string"}
+      - {label: "Demo", name: "demo", widget: "string"}
+  - name: 'footer'
+    label: 'Footer'
+    folder: 'content/footer'
+    format: 'frontmatter'
+    create: true
+    editor:
+      preview: false
+    widget: "select"      
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "footer"}
+      - {label: "Contact", name: "contact", widget: "string"}
+      - {label: "Icon", name: "thumbnail", widget: "image"}      

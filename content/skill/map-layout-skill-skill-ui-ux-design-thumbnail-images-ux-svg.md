@@ -1,5 +1,5 @@
 ---
 layout: skill
-Skill: UI/UX Design
+Skill: UI/UX design
 thumbnail: /images/ux.svg
 ---

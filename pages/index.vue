@@ -10,11 +10,11 @@
           About
         </h1>
       </div>
-      <!-- <AboutMe :about-me="aboutMe" class="px-6" /> -->
-    </section>
-    <pre class="text-white">
-        {{ skills }}
+      <pre class="text-white">
+        {{ about }}
       </pre>
+        <AboutMe :about-me="about" class="px-6" />
+    </section>
     <section id="skills" class="mt-16 sm:mt-32 mb-16 p-6">
       <div class="flex justify-center">
         <h1 class="font-bold text-4xl text-white text-center border-b-4 border-lightBlue">
@@ -36,36 +36,38 @@
     </section>
     <section
       class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mx-auto sm:mx-0 gap-6 gap-y-8 sm:gap-y-10">
-      <!-- <ProjectBio v-for="project in projects.data" :key="project.id" :project="project" /> -->
+      <ProjectBio v-for="project in projects" :key="project.title" :project="project" />
     </section>
+    <FooterNav class="mt-16 sm:mt-40" :footer="footer" />
   </main>
 </template>
 
 <script>
-// import BioBlock from '~/components/BioBlock.vue'
-// import AboutMe from '~/components/AboutMe.vue'
-// import ProjectBio from '~/components/ProjectBio.vue'
-// import LearnedSkill from '~/components/LearnedSkill.vue'
+import BioBlock from '~/components/BioBlock.vue'
+import AboutMe from '~/components/AboutMe.vue'
+import ProjectBio from '~/components/ProjectBio.vue'
+import LearnedSkill from '~/components/LearnedSkill.vue'
+import FooterNav from '~/components/FooterNav.vue'
 
 export default {
   name: 'IndexPage',
   components: {
-    // BioBlock,
-    // AboutMe,
-    // ProjectBio,
-    // LearnedSkill
+    BioBlock,
+    AboutMe,
+    ProjectBio,
+    LearnedSkill,
+    FooterNav
   },
   async asyncData ({ $content }) {
+    const about = await $content('about').fetch()
     const skills = await $content('skill').fetch()
+    const projects = await $content('projects').fetch()
+    const footer = await $content('footer').fetch()
     return {
-      skills
-    }
-  },
-  data () {
-    return {
-      aboutMe: '',
-      skills: [],
-      projects: []
+      about,
+      skills,
+      projects,
+      footer
     }
   },
   computed: {

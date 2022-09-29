@@ -6,12 +6,11 @@
           Reach me at:
         </li>
         <li class="flex flex-row gap-2 sm:gap-0">
-          <span v-for="(item, i) in footerData" :key="i" class="flex flex-row mr-0 my-3 sm:my-0 sm:mr-2">
-          <a :href="item" target="_blank">
-            <img :src="'http://localhost:1337'" width="25"
-              class="opacity-80 hover:opacity-100" :alt="item.icon">
-          </a>
-        </span>
+          <span v-for="item in footer" :key="item.contact" class="flex flex-row mr-0 my-3 sm:my-0 sm:mr-2">
+            <a :href="item.contact" target="_blank">
+              <img :src="item.thumbnail" width="25" class="opacity-80 hover:opacity-100">
+            </a>
+          </span>
         </li>
       </ul>
       <div class="text-lightBlue">
@@ -24,9 +23,10 @@
 <script>
 export default {
   name: 'FooterNav',
-  data () {
-    return {
-      footerData: []
+  props: {
+    footer: {
+      type: Object,
+      required: true
     }
   },
   computed: {

@@ -45,7 +45,6 @@ import AboutMe from '~/components/AboutMe.vue'
 import ProjectBio from '~/components/ProjectBio.vue'
 import LearnedSkill from '~/components/LearnedSkill.vue'
 
-import axios from 'axios'
 export default Vue.extend({
   name: 'IndexPage',
   components: {
@@ -65,16 +64,6 @@ export default Vue.extend({
     currentYear () {
       return new Date().getFullYear()
     }
-  },
-  async mounted () {
-    const aboutMeRes = await axios.get('http://localhost:1337/api/abouts')
-    this.aboutMe = aboutMeRes.data
-
-    const skillsRes = await axios.get('http://localhost:1337/api/skills?populate=*')
-    this.skills = skillsRes.data
-
-    const projectsRes = await axios.get('http://localhost:1337/api/projects?populate=*')
-    this.projects = projectsRes.data
   }
 })
 </script>

@@ -1,7 +1,7 @@
 <template>
     <li class="grid grid-cols-5 text-white shadow-inner">
-        <img :src="'http://localhost:1337'" width="30" :alt="skill" class="ml-auto col-span-2 shadow-2xl opacity-80">
-        <span class="grid-cols-5"> {{ skill }}</span>
+        <img :src="'/' + skill.Skill" width="30" :alt="skill.Skill" class="ml-auto col-span-2 shadow-2xl opacity-80">
+        <span class="grid-cols-5"> {{ skill.Skill }}</span>
     </li>
 </template>
 

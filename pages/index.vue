@@ -13,7 +13,7 @@
       <!-- <AboutMe :about-me="aboutMe" class="px-6" /> -->
     </section>
     <pre class="text-white">
-        {{ blogs }}
+        {{ skills }}
       </pre>
     <section id="skills" class="mt-16 sm:mt-32 mb-16 p-6">
       <div class="flex justify-center">
@@ -24,7 +24,7 @@
     </section>
     <section>
       <ul class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-10 bg-primary-200 p-12 shadow-2xl rounded-2xl">
-        <!-- <LearnedSkill v-for="skill in skills.data" :key="skill.id" :skill="skill" class="flex gap-4 justify-center items-center ml-10 sm:ml-0" /> -->
+        <LearnedSkill v-for="(skill, i) in skills" :key="i" :skill="skill" class="flex gap-4 justify-center items-center ml-10 sm:ml-0" />
       </ul>
     </section>
     <section id="work" class="mt-16 sm:mt-32 mb-16 p-6">
@@ -56,9 +56,9 @@ export default {
     // LearnedSkill
   },
   async asyncData ({ $content }) {
-    const blogs = await $content('blog').fetch()
+    const skills = await $content('skill').fetch()
     return {
-      blogs
+      skills
     }
   },
   data () {

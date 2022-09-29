@@ -8,11 +8,11 @@
           El-Mariami
         </h2>
         <h3 class="font-medium text-2xl text-white my-10 sm:my-5">
-            <span class="opacity-80">
+            <span>
               A
             </span>
             <span class="text-lightBlue">frontend developer</span>
-            <span class="opacity-80 block sm:inline">
+            <span class="block sm:inline">
               with {{ currentYear - 2017 }} years of experience.
             </span>
         </h3>

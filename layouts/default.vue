@@ -4,7 +4,7 @@
     <div class="container mx-auto">
       <Nuxt />
     </div>
-    <FooterNav class="mt-40" />
+    <FooterNav class="mt-16 sm:mt-40" />
   </div>
 </template>
 

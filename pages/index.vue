@@ -53,8 +53,14 @@ export default Vue.extend({
     ProjectBio,
     LearnedSkill
   },
-  async asyncData ({ $content }) {
-    const posts = await $content('blog').fetch()
+  async asyncData ({ $content, params, error }) {
+    let posts
+    try {
+      posts = await $content('blog', params.slug).fetch()
+      // OR const article = await $content(`articles/${params.slug}`).fetch()
+    } catch (e) {
+      error({ message: 'Blog Post not found' })
+    }
 
     return {
       posts

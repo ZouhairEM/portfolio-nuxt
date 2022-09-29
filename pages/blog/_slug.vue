@@ -1,5 +1,7 @@
 <template>
     <div class="container">
+      <h1>{{ blog.title }}</h1>
+      <img v-if="blog.thumbnail" :src="blog.thumbnail" :alt="blog.title" width="100">
       <nuxt-content :document="blog" />
       <pre>
         {{ blog }}

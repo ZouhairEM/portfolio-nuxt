@@ -29,7 +29,6 @@ collections:
     fields:
       - {label: "Layout", name: "layout", widget: "hidden", default: "about"}
       - {label: "About", name: "About", widget: "string"}
-      - {label: "Featured Image", name: "thumbnail", widget: "image"}
   - name: 'skills'
     label: 'Skills'
     folder: 'content/skill'
@@ -43,7 +42,7 @@ collections:
       - {label: "Skill", name: "Skill", widget: "string"}
       - {label: "Featured Image", name: "thumbnail", widget: "image"}
   - name: 'projects'
-    label: 'Projects'
+    label: 'Work'
     folder: 'content/projects'
     format: 'frontmatter'
     create: true
@@ -58,7 +57,7 @@ collections:
       - {label: "Repo", name: "repo", widget: "string"}
       - {label: "Demo", name: "demo", widget: "string"}
   - name: 'footer'
-    label: 'Footer'
+    label: 'Footer Contact'
     folder: 'content/footer'
     format: 'frontmatter'
     create: true

@@ -27,23 +27,12 @@ module.exports = {
     },
     colors: {
       primary: {
-        100: '#625be4',
-        200: '#011e35',
-        300: '#011627'
+        100: '#011e35',
+        200: '#011627'
       },
-      secondary: {
-        100: '#4f4abc',
-        200: '#3a368b',
-        300: '#2a2761'
-      },
-      tertiary: {
-        100: '#58c6ff',
-        200: '#55bcf2',
-        300: '#4196c2'
-      },
-      orange: '#4f4abc',
-      white: '#f3e4e4',
-      lightBlue: 'rgba(65, 150, 194, 0.9)'
+      secondary: '#4196c2',
+      tertiary: 'rgba(65, 150, 194, 0.9)',
+      white: '#f3e4e4'
     }
   }
 }

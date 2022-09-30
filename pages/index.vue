@@ -6,7 +6,7 @@
     </section>
     <section ref="about">
       <div class="flex justify-center mb-16">
-        <h1 class="font-bold text-4xl text-white text-center border-b-4 border-lightBlue">
+        <h1 class="font-bold text-4xl text-white text-center border-b-4 border-tertiary">
           About
         </h1>
       </div>
@@ -14,19 +14,19 @@
     </section>
     <section id="skills" class="mt-16 sm:mt-32 mb-16 p-6" ref="skills">
       <div class="flex justify-center">
-        <h1 class="font-bold text-4xl text-white text-center border-b-4 border-lightBlue">
+        <h1 class="font-bold text-4xl text-white text-center border-b-4 border-tertiary">
           Skills
         </h1>
       </div>
     </section>
     <section>
-      <ul class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-10 bg-primary-200 p-12 shadow-2xl rounded-2xl">
+      <ul class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-10 bg-primary-100 p-12 shadow-2xl rounded-2xl">
         <LearnedSkill v-for="(skill, i) in skills" :key="i" :skill="skill" class="flex gap-4 justify-center items-center ml-10 sm:ml-0" />
       </ul>
     </section>
     <section class="mt-16 sm:mt-32 mb-16 p-6" ref="work">
       <div class="flex justify-center">
-        <h1 class="font-bold text-4xl text-white text-center border-b-4 border-lightBlue">
+        <h1 class="font-bold text-4xl text-white text-center border-b-4 border-tertiary">
           Work
         </h1>
       </div>

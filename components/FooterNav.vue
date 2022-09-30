@@ -25,7 +25,7 @@ export default {
   name: 'FooterNav',
   props: {
     footer: {
-      type: Object,
+      type: Array,
       required: true
     }
   },

@@ -18,7 +18,7 @@ export default {
       {
         rel: 'icon',
         type: 'image/x-icon',
-        href: '~/assets/img/favicon.ico'
+        href: 'favicon.ico'
       },
       {
         rel: 'stylesheet',
@@ -51,20 +51,6 @@ export default {
   modules: [
     '@nuxt/content'
   ],
-  generate: {
-    generate: {
-      routes () {
-        const fs = require('fs')
-        const path = require('path')
-        return fs.readdirSync('./content/blog').map((file) => {
-          return {
-            route: `/blog/${path.parse(file).name}`, // Return the slug
-            payload: require(`./content/blog/${file}`)
-          }
-        })
-      }
-    }
-  },
   content: {
     // Options
   },

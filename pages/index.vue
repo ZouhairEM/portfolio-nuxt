@@ -10,10 +10,7 @@
           About
         </h1>
       </div>
-      <pre class="text-white">
-        {{ about }}
-      </pre>
-        <AboutMe :about-me="about" class="px-6" />
+      <AboutMe :about-me="about" class="px-6" />
     </section>
     <section id="skills" class="mt-16 sm:mt-32 mb-16 p-6">
       <div class="flex justify-center">

@@ -29,6 +29,7 @@ collections:
     fields:
       - {label: "Layout", name: "layout", widget: "hidden", default: "about"}
       - {label: "About", name: "About", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}
   - name: 'skills'
     label: 'Skills'
     folder: 'content/skill'

@@ -28,20 +28,17 @@
                     Work
                 </li>
             </NuxtLink>
-            <div v-for="(item, i) in resume.data" :key="i">
-                <a :href="'http://localhost:1337' + item.attributes.cv.data.attributes.url" target="_blank">
-                    <li
-                        class="cursor-pointer px-2 py-1 m-1 bg-white rounded shadow text-primary-300 font-bold hover:bg-primary-300 hover:text-white">
-                        Resume
-                    </li>
-                </a>
-            </div>
+            <a :href="'http://localhost:1337'" target="_blank">
+                <li
+                    class="cursor-pointer px-2 py-1 m-1 bg-white rounded shadow text-primary-300 font-bold hover:bg-primary-300 hover:text-white">
+                    Resume
+                </li>
+            </a>
         </ul>
     </nav>
 </template>
 
 <script>
-import axios from 'axios'
 export default {
   name: 'NavBar',
   data () {
@@ -49,10 +46,6 @@ export default {
       closed: true,
       resume: {}
     }
-  },
-  async mounted () {
-    const resumeRes = await axios.get('http://localhost:1337/api/cvs?populate=*')
-    this.resume = resumeRes.data
   }
 }
 </script>

@@ -6,12 +6,11 @@
           Reach me at:
         </li>
         <li class="flex flex-row gap-2 sm:gap-0">
-          <span v-for="item in footerData.data" :key="item.id" class="flex flex-row mr-0 my-3 sm:my-0 sm:mr-2">
-          <a :href="item.attributes.link" target="_blank">
-            <img :src="'http://localhost:1337' + item.attributes.icon.data.attributes.url" width="25"
-              class="opacity-80 hover:opacity-100" :alt="item.icon">
-          </a>
-        </span>
+          <span v-for="item in footer" :key="item.contact" class="flex flex-row mr-0 my-3 sm:my-0 sm:mr-2">
+            <a :href="item.contact" target="_blank">
+              <img :src="item.thumbnail" width="25" class="opacity-80 hover:opacity-100">
+            </a>
+          </span>
         </li>
       </ul>
       <div class="text-lightBlue">
@@ -22,23 +21,18 @@
 </template>
 
 <script>
-import axios from 'axios'
-
 export default {
   name: 'FooterNav',
-  data () {
-    return {
-      footerData: []
+  props: {
+    footer: {
+      type: Array,
+      required: true
     }
   },
   computed: {
     currentYear () {
       return new Date().getFullYear()
     }
-  },
-  async mounted () {
-    const footerRes = await axios.get('http://localhost:1337/api/footers?populate=*')
-    this.footerData = footerRes.data
   }
 }
 </script>

@@ -10,7 +10,7 @@
           About
         </h1>
       </div>
-      <AboutMe :about-me="aboutMe" class="px-6" />
+      <AboutMe :about-me="about" class="px-6" />
     </section>
     <section id="skills" class="mt-16 sm:mt-32 mb-16 p-6">
       <div class="flex justify-center">
@@ -21,7 +21,7 @@
     </section>
     <section>
       <ul class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-10 bg-primary-200 p-12 shadow-2xl rounded-2xl">
-        <LearnedSkill v-for="skill in skills.data" :key="skill.id" :skill="skill" class="flex gap-4 justify-center items-center ml-10 sm:ml-0" />
+        <LearnedSkill v-for="(skill, i) in skills" :key="i" :skill="skill" class="flex gap-4 justify-center items-center ml-10 sm:ml-0" />
       </ul>
     </section>
     <section id="work" class="mt-16 sm:mt-32 mb-16 p-6">
@@ -33,32 +33,38 @@
     </section>
     <section
       class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mx-auto sm:mx-0 gap-6 gap-y-8 sm:gap-y-10">
-      <ProjectBio v-for="project in projects.data" :key="project.id" :project="project" />
+      <ProjectBio v-for="project in projects" :key="project.title" :project="project" />
     </section>
+    <FooterNav class="mt-16 sm:mt-40" :footer="footer" />
   </main>
 </template>
 
 <script>
-import Vue from 'vue'
 import BioBlock from '~/components/BioBlock.vue'
 import AboutMe from '~/components/AboutMe.vue'
 import ProjectBio from '~/components/ProjectBio.vue'
 import LearnedSkill from '~/components/LearnedSkill.vue'
+import FooterNav from '~/components/FooterNav.vue'
 
-import axios from 'axios'
-export default Vue.extend({
+export default {
   name: 'IndexPage',
   components: {
     BioBlock,
     AboutMe,
     ProjectBio,
-    LearnedSkill
+    LearnedSkill,
+    FooterNav
   },
-  data () {
+  async asyncData ({ $content }) {
+    const about = await $content('about').fetch()
+    const skills = await $content('skill').fetch()
+    const projects = await $content('projects').fetch()
+    const footer = await $content('footer').fetch()
     return {
-      aboutMe: '',
-      skills: [],
-      projects: []
+      about,
+      skills,
+      projects,
+      footer
     }
   },
   computed: {
@@ -66,15 +72,10 @@ export default Vue.extend({
       return new Date().getFullYear()
     }
   },
-  async mounted () {
-    const aboutMeRes = await axios.get('http://localhost:1337/api/abouts')
-    this.aboutMe = aboutMeRes.data
-
-    const skillsRes = await axios.get('http://localhost:1337/api/skills?populate=*')
-    this.skills = skillsRes.data
-
-    const projectsRes = await axios.get('http://localhost:1337/api/projects?populate=*')
-    this.projects = projectsRes.data
+  head () {
+    return {
+      script: [{ src: 'https://identity.netlify.com/v1/netlify-identity-widget.js' }]
+    }
   }
-})
+}
 </script>

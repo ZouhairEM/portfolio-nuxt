@@ -1,13 +1,13 @@
 backend:
   name: git-gateway
-  branch: netlify # Branch to update (optional; defaults to master)
+  branch: master # Branch to update (optional; defaults to master)
 
 media_folder: static/images
 public_folder: /images
 
 collections:
   - name: 'resume'
-    label: 'resume'
+    label: 'Resume'
     folder: 'content/resume'
     format: 'frontmatter'
     create: true
@@ -27,8 +27,8 @@ collections:
       preview: false
     widget: "select"      
     fields:
-      - {label: "Layout", name: "layout", widget: "hidden", default: "skill"}
-      - {label: "Skill", name: "Skill", widget: "string"}
+      - {label: "Layout", name: "layout", widget: "hidden", default: "about"}
+      - {label: "About", name: "About", widget: "string"}
       - {label: "Featured Image", name: "thumbnail", widget: "image"}
   - name: 'skills'
     label: 'Skills'

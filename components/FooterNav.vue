@@ -23,11 +23,13 @@
 <script>
 export default {
   name: 'FooterNav',
-  props: {
-    footer: {
-      type: Array,
-      required: true
+  data () {
+    return {
+      footer: null
     }
+  },
+  async fetch () {
+    this.footer = await this.$content('footer', { deep: true }).fetch()
   },
   computed: {
     currentYear () {

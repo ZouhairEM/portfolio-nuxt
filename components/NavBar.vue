@@ -11,24 +11,19 @@
                 </svg>
             </button>
         </div>
-        <ul
-            class="flex container flex-col sm:flex-row h-screen sm:h-auto text-center items-center justify-center sm:flex" :class="{'hidden': closed }">
-            <NuxtLink to="#about">
-                <li class="cursor-pointer mr-0 sm:mr-10 p-2 text-lightBlue hover:text-white">
-                    About
-                </li>
-            </NuxtLink>
-            <NuxtLink to="#skills">
-                <li class="cursor-pointer mr-0 sm:mr-10 p-2 text-lightBlue hover:text-white">
-                    Skills
-                </li>
-            </NuxtLink>
-            <NuxtLink to="#work" class="mr-0 sm:mr-auto">
-                <li class="cursor-pointer p-2 text-lightBlue hover:text-white">
-                    Work
-                </li>
-            </NuxtLink>
-            <a :href="'http://localhost:1337'" target="_blank">
+        <ul class="flex container flex-col sm:flex-row h-screen sm:h-auto text-center items-center justify-center sm:flex"
+            :class="{'hidden': closed }">
+            <li @click="emitScroll('about')"
+                class="cursor-pointer mr-0 sm:mr-10 p-2 text-lightBlue hover:text-white">
+                About
+            </li>
+            <li @click="emitScroll('skills')" class="cursor-pointer mr-0 sm:mr-10 p-2 text-lightBlue hover:text-white">
+                Skills
+            </li>
+            <li @click="emitScroll('work')" class="cursor-pointer p-2 text-lightBlue hover:text-white mr-0 sm:mr-auto">
+                Work
+            </li>
+            <a :href="resume[0].document" target="_blank">
                 <li
                     class="cursor-pointer px-2 py-1 m-1 bg-white rounded shadow text-primary-300 font-bold hover:bg-primary-300 hover:text-white">
                     Resume
@@ -44,8 +39,16 @@ export default {
   data () {
     return {
       closed: true,
-      resume: {}
+      resume: null
     }
+  },
+  methods: {
+    emitScroll (target) {
+      this.$nuxt.$emit('handleScroll', { name: target })
+    }
+  },
+  async fetch () {
+    this.resume = await this.$content('resume', { deep: true }).fetch()
   }
 }
 </script>

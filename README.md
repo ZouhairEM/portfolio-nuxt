@@ -13,5 +13,5 @@ The content gets created/updated using markdown files, pushed from the Netlify C
 _The Netlify CMS for my portfolio looks like this_
 
 <p align="center">
-    <img alt="CMS Portfolio" src="static/images/cms.png" width="500">
+    <img alt="CMS Portfolio" src="static/images/netlifycmsbackend.png" width="500">
 </p>

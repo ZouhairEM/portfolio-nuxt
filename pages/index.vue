@@ -1,8 +1,8 @@
 <template>
   <main>
-    <section class="flex flex-col md:flex-row justify-center items-center h-screen">
+    <section class="flex flex-col md:flex-row justify-center items-center min-h-screen mx-auto">
       <BioBlock :currentYear="currentYear" class="text-center sm:text-left" />
-      <img src="@/assets/img/me.jpeg" class="w-40 rounded-full shadow-inner opacity-80 ml-0 sm:ml-20" alt="Zouhair El-Mariami">
+      <img src="@/assets/img/me.jpeg" class="w-40 rounded-full shadow-inner opacity-80 ml-0 md:ml-20" alt="Zouhair El-Mariami">
     </section>
     <section ref="about">
       <div class="flex justify-center mb-16">

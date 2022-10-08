@@ -13,7 +13,7 @@
       <div class="py-2 mx-auto sm:mx-0">
         <a :href="project.repo" target="_blank"
           class="mr-2 rounded-lg border border-secondary bg-primary-200 p-2 px-3 text-white hover:bg-tertiary">
-          Github
+          Source Code
         </a>
         <a :href="project.demo" target="_blank"
           class="rounded-lg border border-secondary bg-primary-200 p-2 px-3 text-white hover:bg-tertiary">

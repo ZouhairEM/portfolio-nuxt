@@ -35,16 +35,6 @@
       class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mx-auto sm:mx-0 gap-6 gap-y-8 sm:gap-y-10">
       <ProjectBio v-for="project in projects" :key="project.title" :project="project" />
     </section>
-    <section class="mt-16 sm:mt-32 mb-16 p-6" ref="contact">
-      <div class="flex justify-center">
-        <h1 class="font-bold text-4xl text-white text-center border-b-4 border-tertiary">
-          Contact
-        </h1>
-      </div>
-    </section>
-    <section>
-      <ContactForm class="flex flex-col items-center bg-primary-100 p-12 shadow-2xl rounded-2xl" />
-    </section>
   </main>
 </template>
 
@@ -53,7 +43,6 @@ import BioBlock from '~/components/BioBlock.vue'
 import AboutMe from '~/components/AboutMe.vue'
 import ProjectBio from '~/components/ProjectBio.vue'
 import LearnedSkill from '~/components/LearnedSkill.vue'
-import ContactForm from '~/components/ContactForm.vue'
 
 export default {
   name: 'IndexPage',

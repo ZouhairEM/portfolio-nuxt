@@ -15,7 +15,7 @@
         frontend developer
       </span>
       <span class="block sm:inline">
-        with {{ currentYear - 2017 }} years of experience.
+        with {{ currentYear - 2019 }} years of experience.
       </span>
     </h3>
   </div>

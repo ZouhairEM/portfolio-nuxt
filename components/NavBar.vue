@@ -19,11 +19,8 @@
       <li @click="emitScroll('skills')" class="cursor-pointer mr-0 sm:mr-10 p-2 text-tertiary hover:text-white">
         Skills
       </li>
-      <li @click="emitScroll('work')" class="cursor-pointer mr-0 sm:mr-10 p-2 text-tertiary hover:text-white">
+      <li @click="emitScroll('work')" class="cursor-pointer  mr-0 sm:mr-auto p-2 text-tertiary hover:text-white">
         Work
-      </li>
-      <li @click="emitScroll('contact')" class="cursor-pointer p-2 text-tertiary hover:text-white mr-0 sm:mr-auto">
-        Contact
       </li>
       <a :href="resume[0].document" target="_blank">
         <li

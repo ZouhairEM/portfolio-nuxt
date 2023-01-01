@@ -15,7 +15,7 @@
         frontend developer
       </span>
       <span class="block sm:inline">
-        with {{ currentYear - 2019 }} years of experience.
+        who works mostly with Vue and React
       </span>
     </h3>
   </div>
@@ -23,14 +23,6 @@
 
 <script>
 export default {
-  name: 'BioBlock',
-  props: {
-    currentYear: {
-      type: Number,
-      default: () => {
-        return Number
-      }
-    }
-  }
+  name: 'BioBlock'
 }
 </script>

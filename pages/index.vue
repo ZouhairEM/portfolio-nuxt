@@ -1,7 +1,7 @@
 <template>
   <main>
     <section class="flex flex-col md:flex-row justify-center items-center min-h-screen mx-auto">
-      <BioBlock :currentYear="currentYear" class="text-center sm:text-left" />
+      <BioBlock class="text-center sm:text-left" />
       <img src="@/assets/img/me.jpeg" class="w-40 rounded-full shadow-inner opacity-80 ml-0 md:ml-20" alt="Zouhair El-Mariami">
     </section>
     <section ref="about">
@@ -63,11 +63,6 @@ export default {
     this.about = await this.$content('about', { deep: true }).fetch()
     this.skills = await this.$content('skill', { deep: true }).fetch()
     this.projects = await this.$content('projects', { deep: true }).fetch()
-  },
-  computed: {
-    currentYear () {
-      return new Date().getFullYear()
-    }
   },
   methods: {
     scrollToElement (e) {

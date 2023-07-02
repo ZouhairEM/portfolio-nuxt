@@ -2,4 +2,4 @@
 layout: about
 About: About me
 ---
-I'm a Dutch frontend developer working as an Associate Consultant for Capgemini Group. Before that, I studied web development and got a Bachelor of Engineering degree in IT & Media Design.
+Currently I'm working as a consultant frontend developer based in The Netherlands. Before that, I studied web development and obtained a BE degree in IT & Media Design.
